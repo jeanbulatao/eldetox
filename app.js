@@ -3,7 +3,8 @@ const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const app = express();
-
+const cors = require('cors');
+app.use(cors());
 app.engine('handlebars', exphbs());
 app.set('view engine','handlebars');
 
