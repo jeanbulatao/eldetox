@@ -172,14 +172,14 @@ class EmailService {
            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
              
        <div style="color: #000000; line-height: 140%; text-align: left; word-wrap: break-word;">
-         <p style="font-size: 14px; line-height: 140%;"><em>Dear Junjean,</em></p>
+         <p style="font-size: 14px; line-height: 140%;"><em>Dear <strong>` + req.body.Name +`</strong>,</em></p>
      <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
      <p style="font-size: 14px; line-height: 140%;"><em>Thank you so much for signing up with El Detox! We're very excited to welcome you to the El Detox family. Please review the details of your order below.</em></p>
      <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
      <p style="font-size: 14px; line-height: 140%;"><em>Here are the information you&rsquo;ll need to access your El Detox account. You may want to print this email for your personal records.</em></p>
      <p style="font-size: 14px; line-height: 140%;"><br /><em>Your Account Information</em></p>
      <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
-     <p style="font-size: 14px; line-height: 140%;"><em>E-Mail Address: <a href=":` + req.body.Email + `" target="_blank" rel="noopener">XXXXXXXXXX@gmail.com</a></em></p>
+     <p style="font-size: 14px; line-height: 140%;"><em>E-Mail Address: <a href=":` + req.body.Email + `" target="_blank" rel="noopener">`+ req.body.Email +`</a></em></p>
      <p style="font-size: 14px; line-height: 140%;"><em>User ID:` + req.body.Email + `</em></p>
      <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
      <p style="font-size: 14px; line-height: 140%;"><em><strong>Congratulations! </strong></em></p>
@@ -758,7 +758,9 @@ class EmailService {
 
      var data = [{
       "Email" : req.body.Email,
-      "Message" : output}
+      "Message" : output,
+      "Type" : 'Registration for your El Detox Account'}
+      
     ]
      await Mailer.MailTo(data);
      res.send("sent");
