@@ -174,7 +174,7 @@ class EmailService {
        <div style="color: #000000; line-height: 140%; text-align: left; word-wrap: break-word;">
          <p style="font-size: 14px; line-height: 140%;"><em>Dear <strong>` + req.body.Name +`</strong>,</em></p>
      <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
-     <p style="font-size: 14px; line-height: 140%;"><em>Thank you so much for signing up with El Detox! We're very excited to welcome you to the El Detox family. Please review the details of your order below.</em></p>
+     <p style="font-size: 14px; line-height: 140%;"><em>Thank you so much for signing up with El Detox! We're very excited to welcome you to the El Detox family.</em></p>
      <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
      <p style="font-size: 14px; line-height: 140%;"><em>Here are the information you&rsquo;ll need to access your El Detox account. You may want to print this email for your personal records.</em></p>
      <p style="font-size: 14px; line-height: 140%;"><br /><em>Your Account Information</em></p>
