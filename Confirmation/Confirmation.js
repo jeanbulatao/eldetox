@@ -5,21 +5,21 @@ class Confirmation {
 async Confirmation(req,res)
 {
 
-  console.log(req.body.order);
 
   const Products = req.body.orderProductsToEmail;
   var str = '';
- 
+  var int = 1;
   Products.forEach(element => {
    str += `
         <tr>
-          <th scope="row" style="text-align: center; padding-right: 20px ">1</th>
+          <th scope="row" style="text-align: center; padding-right: 20px ">`+ int +`</th>
           <td style="text-align: left;">`+element['product_id'] +`</td>
           <td style="text-align: center;">`+element['quantity'] +`</td>
           <td style="text-align: center; padding-right: 20px; font-size: 12px">QAR `+ element['price'] +`</td>
           <td style="text-align: center; padding-right: 20px; font-size: 12px">QAR `+ (element['quantity'] * parseFloat(element['price']))+`</td>
         </tr>
-        ` });
+        `
+      int += 1 });
 
     const outputCustomer = `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -1872,7 +1872,7 @@ async Confirmation(req,res)
         "Type" : "Confirmation"}
       ]
       var dataToCustomerCare = [{
-        "Email" : 'customercare@el-detox.com',
+        "Email" : req.body.order.billing_email,
         "Message" : outputCustomerCare,
         "Type" : "Copy of Confirmation"}
       ]
