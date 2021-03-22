@@ -4,6 +4,8 @@ const Mailer = require('../Mailer');
 class thankyou {
 
     async thankyou (req,res) {
+
+
         const output = `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
         <head>
@@ -169,7 +171,7 @@ class thankyou {
               <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
                 
           <div style="color: #000000; line-height: 140%; text-align: left; word-wrap: break-word;">
-            <p style="font-size: 14px; line-height: 140%;"><em>Dear <strong>`+ req.body.Name +`</strong>,</em></p>
+            <p style="font-size: 14px; line-height: 140%;"><em>Dear <strong>`+ req.body.order.billing_fname +` `+ req.body.order.billing_lname + `</strong>,</em></p>
         <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
         <p style="font-size: 14px; line-height: 140%;"><em>On behalf of El Detox, we'd like to congratulate you on your investment in your near future health. We sincerely hope you'll enjoy using our range of clean skincare, haircare, cosmetics, and nutrition and to indulge in the benefits of toxins clearning.</em></p>
         <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
@@ -704,7 +706,7 @@ class thankyou {
         
         </html>`;
         var data = [{
-            "Email" : req.body.Email,
+            "Email" : req.body.order.billing_email,
             "Message" : output,
             "Type" : "Thank You"}
           ]
