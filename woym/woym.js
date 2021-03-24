@@ -3,6 +3,7 @@ const Mailer = require('../Mailer');
 class woym {
 
 async woym(req,res) {
+  console.log(req.body);
 
    const output = `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -172,7 +173,7 @@ async woym(req,res) {
           <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
             
       <div style="color: #000000; line-height: 140%; text-align: left; word-wrap: break-word;">
-        <p style="font-size: 14px; line-height: 140%;"><em>Dear <strong>`+ req.body.Firstname +` ` + req.body.Lastname +`</strong>,</em></p>
+        <p style="font-size: 14px; line-height: 140%;"><em>Dear <strong>`+ req.body.first_name +` ` + req.body.last_name +`</strong>,</em></p>
     <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
     <p style="font-size: 14px; line-height: 140%;"><em>Thank you for your email.</em></p>
     <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
@@ -890,15 +891,15 @@ async woym(req,res) {
       <div style="color: #000000; line-height: 140%; text-align: left; word-wrap: break-word;">
         <p style="font-size: 14px; line-height: 140%;"><em>Dear <strong>El-Detox Team</strong></em></p>
     <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
-    <p style="line-height: 140%; font-size: 14px;"><em>One of our precious customer sent us a message.</em></p>
+    <p style="line-height: 140%; font-size: 14px;"><em>One of our valued customer sent us a message.</em></p>
     <p style="line-height: 140%; font-size: 14px;">&nbsp;</p>
     <p style="line-height: 140%; font-size: 14px;"><em>Here are his/her information:</em></p>
     <p style="line-height: 140%; font-size: 14px;">&nbsp;</p>
-    <p style="line-height: 140%; font-size: 14px;">First name : `+ req.body.Firstname +`</p>
-    <p style="line-height: 140%; font-size: 14px;">Last name :  `+ req.body.Lastname +`</p>
-    <p style="line-height: 140%; font-size: 14px;">Phone :  `+ req.body.Phone +`</p>
-    <p style="line-height: 140%; font-size: 14px;">Email :  `+ req.body.Email +`</p>
-    <p style="line-height: 140%; font-size: 14px;">Message : `+ req.body.Message +`</p>
+    <p style="line-height: 140%; font-size: 14px;">First name : `+ req.body.first_name +`</p>
+    <p style="line-height: 140%; font-size: 14px;">Last name :  `+ req.body.last_name +`</p>
+    <p style="line-height: 140%; font-size: 14px;">Phone :  `+ req.body.phone +`</p>
+    <p style="line-height: 140%; font-size: 14px;">Email :  `+ req.body.email +`</p>
+    <p style="line-height: 140%; font-size: 14px;">Message : `+ req.body.message +`</p>
     <p style="line-height: 140%; font-size: 14px;">&nbsp;</p>
     <p style="line-height: 140%; font-size: 14px;"><em>Kindly attend to this message as soon as possible.</em></p>
     <p style="line-height: 140%; font-size: 14px;">&nbsp;</p>
@@ -1141,14 +1142,15 @@ async woym(req,res) {
     </html>
     `;
     var dataFromPoster = [{
-        "Email" : req.body.Email,
+        "Email" : req.body.email,
         "Message" : output,
         "Type" : "We receive your message."}
       ]
       var dataToCustomerCare = [{
-        "Email" : "customercare@el-detox.com",
+       // "Email" : req.body.email,
+        "Email" : 'customercare@el-detox.com',
         "Message" : output2,
-        "Type" : "Confirmation"}
+        "Type" : "Comments/Suggetion"}
       ];
       
  await Mailer.MailTo(dataFromPoster);
