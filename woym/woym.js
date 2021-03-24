@@ -1150,7 +1150,7 @@ async woym(req,res) {
        // "Email" : req.body.email,
         "Email" : 'customercare@el-detox.com',
         "Message" : output2,
-        "Type" : "Comments/Suggetion"}
+        "Type" : "Comments/Suggestions"}
       ];
       
  await Mailer.MailTo(dataFromPoster);
