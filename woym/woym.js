@@ -179,7 +179,7 @@ async woym(req,res) {
     <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
     <p style="line-height: 140%; font-size: 14px;"><em>Your voice is important to us and we will get back to you promptly.</em></p>
     <p style="line-height: 140%; font-size: 14px;"><em>while waiting for our response, you can browse in our website </em></p>
-    <p style="line-height: 140%; font-size: 14px;"><em><a href="https://el-detox.com" target="_blank" rel="noopener">https://el-detox.com</a> to see your latest products/promos and more! </em></p>
+    <p style="line-height: 140%; font-size: 14px;"><em><a href="https://el-detox.com" target="_blank" rel="noopener">https://el-detox.com</a> to see our latest products/promos and more! </em></p>
     <p style="line-height: 140%; font-size: 14px;">&nbsp;</p>
     <p style="font-size: 14px; line-height: 140%;"><em>Thank you once again,</em></p>
     <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
