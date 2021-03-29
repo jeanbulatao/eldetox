@@ -13,10 +13,10 @@ async Confirmation(req,res)
    str += `
         <tr>
           <th scope="row" style="text-align: center; padding-right: 20px ">`+ int +`</th>
-          <td style="text-align: font-size: 12px left;">`+element['product_id'] +`</td>
-          <td style="text-align: font-size: 12px center;">`+element['quantity'] +`</td>
-          <td style="text-align: center; padding-right: 20px; font-size: 12px">QAR `+ element['price'] +`</td>
-          <td style="text-align: center; padding-right: 20px; font-size: 12px">QAR `+ (element['quantity'] * parseFloat(element['price']))+`</td>
+          <td>`+element['product_id'] +`</td>
+          <td>`+element['quantity'] +`</td>
+          <td style="padding-right: 20px; font-size: 12px">QAR `+ element['price'] +`</td>
+          <td style="font-size: 12px">QAR `+ (element['quantity'] * parseFloat(element['price']))+`</td>
         </tr>
         `
       int += 1 });
@@ -95,10 +95,39 @@ async Confirmation(req,res)
       margin: 0;
       padding: 0;
     }
-    table{width:100%;}
-    table,
-    tr,
-    td {
+    
+  .fixed_header{
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+  }
+  
+  .fixed_header tbody{
+    display:block;
+    width: 100%;
+    overflow: auto;
+    height: 300px;
+  }
+  
+  .fixed_header thead tr {
+     display: block;
+     text-align: center;
+  }
+  
+  .fixed_header thead {
+    background: white;
+    color:black;
+    text-align: center;
+  }
+  
+  .fixed_header th, .fixed_header td {
+    padding: 5px;
+    text-align: center;
+    width: 200px;
+    vertical-align:top;
+  }
+    
+    table {
       vertical-align: top;
       border-collapse: collapse;
     }
@@ -225,18 +254,14 @@ async Confirmation(req,res)
       <div style="width: 100% !important;">
       <!--[if (!mso)&(!IE)]><!--><div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;"><!--<![endif]-->
     ` + `  
-      <table class="table table-striped" style="padding: 10px; margin: 20px   margin-left: auto;
-      margin-right: auto;
-      font-size: 12px;
-      height: 100%;
-      table-layout: fixed;">
+    <table class="fixed_header">
       <thead>
         <tr>
-          <th scope="col" style="text-align: center; padding-right: 20px ">#</th>
-          <th scope="col" style="text-align: left;">Product</th>
-          <th scope="col" style="text-align: left;">QTY</th>
-          <th scope="col" style="text-align: center;">Price</th>
-          <th scope="col" style="text-align: center;">Sub Total</th>
+          <th>#</th>
+          <th>Product</th>
+          <th>QTY</th>
+          <th>Price</th>
+          <th>Sub Total</th>
         </tr>
       </thead>
       <tbody> ` 
@@ -1167,15 +1192,45 @@ async Confirmation(req,res)
      margin: 0;
      padding: 0;
    }
-   
-   table {width: 100%;}
-td
-{
- max-width: 0;
- overflow: hidden;
- text-overflow: ellipsis;
- white-space: nowrap;
+     
+   .fixed_header{
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
 }
+
+.fixed_header tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 300px;
+}
+
+.fixed_header thead tr {
+   display: block;
+   text-align: center;
+}
+
+.fixed_header thead {
+  background: white;
+  color:black;
+  text-align: center;
+}
+
+.fixed_header th, .fixed_header td {
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+  vertical-align:top;
+}
+   table {
+     vertical-align: top;
+     border-collapse: collapse;
+   }
+   
+   p {
+     margin: 0;
+   }
 td.column_a {width: 30%;}
 td.column_b {width: 70%;}
    
@@ -1302,14 +1357,14 @@ td.column_b {width: 70%;}
      <!--[if (!mso)&(!IE)]><!--><div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;"><!--<![endif]-->
      
    ` + `
-     <table class="table table-striped" style="padding: 10px; margin: 20px">
+   <table class="fixed_header">
      <thead>
        <tr>
-         <th scope="col" style="text-align: center; padding-right: 20px ">#</th>
-         <th scope="col" style="text-align: left;">Product</th>
-         <th scope="col" style="text-align: left;">QTY</th>
-         <th scope="col" style="text-align: center;">Price</th>
-         <th scope="col" style="text-align: center;">Sub Total</th>
+         <th>#</th>
+         <th>Product</th>
+         <th>QTY</th>
+         <th>Price</th>
+         <th>Sub Total</th>
        </tr>
      </thead>
      <tbody>` 
@@ -1999,7 +2054,8 @@ td.column_b {width: 70%;}
    `;
 
     var dataToCustomer = [{
-        "Email" : req.body.order.billing_email,
+     
+       "Email" : req.body.order.billing_email,
         "Message" : outputCustomer,
         "Type" : "Confirmation"}
       ]
