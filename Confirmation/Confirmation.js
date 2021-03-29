@@ -13,8 +13,8 @@ async Confirmation(req,res)
    str += `
         <tr>
           <th scope="row" style="text-align: center; padding-right: 20px ">`+ int +`</th>
-          <td style="text-align: left;">`+element['product_id'] +`</td>
-          <td style="text-align: center;">`+element['quantity'] +`</td>
+          <td style="text-align: font-size: 12px left;">`+element['product_id'] +`</td>
+          <td style="text-align: font-size: 12px center;">`+element['quantity'] +`</td>
           <td style="text-align: center; padding-right: 20px; font-size: 12px">QAR `+ element['price'] +`</td>
           <td style="text-align: center; padding-right: 20px; font-size: 12px">QAR `+ (element['quantity'] * parseFloat(element['price']))+`</td>
         </tr>
@@ -95,7 +95,7 @@ async Confirmation(req,res)
       margin: 0;
       padding: 0;
     }
-    
+    table{width:100%;}
     table,
     tr,
     td {
@@ -225,7 +225,11 @@ async Confirmation(req,res)
       <div style="width: 100% !important;">
       <!--[if (!mso)&(!IE)]><!--><div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;"><!--<![endif]-->
     ` + `  
-      <table class="table table-striped" style="padding: 10px; margin: 20px">
+      <table class="table table-striped" style="padding: 10px; margin: 20px   margin-left: auto;
+      margin-right: auto;
+      font-size: 12px;
+      height: 100%;
+      table-layout: fixed;">
       <thead>
         <tr>
           <th scope="col" style="text-align: center; padding-right: 20px ">#</th>
@@ -245,14 +249,14 @@ async Confirmation(req,res)
         <td></td>
         <td style="text-align: right; font-weight: bold;"></td>
         <td style="text-align: right; font-weight: bold;">Shipping : </td>
-        <td style="text-align: right; font-weight: bold; padding-right: 10px ">QAR ` +req.body.order.shipment_total + `</td>
+        <td style="text-align: center; font-weight: bold; padding-right: 10px ">QAR ` +req.body.order.shipment_total + `</td>
       </tr>
         <tr>
         <th scope="row"></th>
         <td></td>
         <td style="text-align: right; font-weight: bold;"></td>
         <td style="text-align: right; font-weight: bold;">Total :</td>
-        <td style="text-align: right; font-weight: bold; padding-right: 10px ">QAR `+ req.body.order.final_total +`</td>
+        <td style="text-align: center; font-weight: bold; padding-right: 10px ">QAR `+ req.body.order.final_total +`</td>
       </tr>
       </tbody>
     </table>
@@ -1164,16 +1168,16 @@ async Confirmation(req,res)
      padding: 0;
    }
    
-   table,
-   tr,
-   td {
-     vertical-align: top;
-     border-collapse: collapse;
-   }
-   
-   p {
-     margin: 0;
-   }
+   table {width: 100%;}
+td
+{
+ max-width: 0;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+}
+td.column_a {width: 30%;}
+td.column_b {width: 70%;}
    
    .ie-container table,
    .mso-container table {
@@ -1220,7 +1224,7 @@ async Confirmation(req,res)
      <tbody>
        <tr>
          <td style="overflow-wrap:break-word;word-break:break-word;padding:0px;font-family:arial,helvetica,sans-serif;" align="left">
-           
+            
    <table width="100%" cellpadding="0" cellspacing="0" border="0">
      <tr>
        <td style="padding-right: 0px;padding-left: 0px;" align="center">
@@ -1318,14 +1322,14 @@ async Confirmation(req,res)
         <td></td>
         <td style="text-align: right; font-weight: bold;"></td>
         <td style="text-align: right; font-weight: bold;">Shipping : </td>
-        <td style="text-align: right; font-weight: bold; padding-right: 10px ">QAR ` +req.body.order.shipment_total + `</td>
+        <td style="text-align: center; font-weight: bold; padding-right: 10px ">QAR ` +req.body.order.shipment_total + `</td>
       </tr>
         <tr>
         <th scope="row"></th>
         <td></td>
         <td style="text-align: right; font-weight: bold;"></td>
         <td style="text-align: right; font-weight: bold;">Total :</td>
-        <td style="text-align: right; font-weight: bold; padding-right: 10px ">QAR `+ req.body.order.final_total +`</td>
+        <td style="text-align: center; font-weight: bold; padding-right: 10px ">QAR `+ req.body.order.final_total +`</td>
       </tr>
       </tbody>
     </table>
@@ -2000,7 +2004,7 @@ async Confirmation(req,res)
         "Type" : "Confirmation"}
       ]
       var dataToCustomerCare = [{
-        "Email" : 'customercare@el-detox.com',
+       "Email" : 'customercare@el-detox.com',
         "Message" : outputCustomerCare,
         "Type" : "Copy of Confirmation"}
       ]
