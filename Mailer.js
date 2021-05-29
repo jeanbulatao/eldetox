@@ -20,8 +20,17 @@ async MailTo(req,res)
         to : req[0].Email,
         subject:  req[0].Type,
         text: 'hello world',
-        html:  req[0].Message
- 
+        html:  req[0].Message,
+        attachments : [{
+            filename : "logo.png",
+            path : "https://img.bayengage.com/32bb2557a2c6/studio/6260/logo.png",
+            cid : "logo"
+        },
+        {
+            filename : "Theqa qr.png",
+            path : "https://img.bayengage.com/32bb2557a2c6/studio/6259/theqa-qr.png"
+        }
+        ]
     }
  
     transporter.sendMail(mailOptions,(error, info)=>{
