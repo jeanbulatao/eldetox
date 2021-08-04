@@ -728,7 +728,7 @@ async Confirmation(req,res)
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
     <tr>
       <td style="padding-right: 0px;padding-left: 0px;" align="center">
-        <a href="https://www.el-detox.com/product/rose-and-bilberry-toning-gel" target="_blank">
+        <a href="https://www.el-detox.com/product/the-organic-pharmacy-rose-and-bilberry-toning-gel" target="_blank">
         <img align="center" border="0" src="https://img.bayengage.com/32bb2557a2c6/studio/3695/Prod2.jpg" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 105px;" width="105"/>
         </a>
       </td>
@@ -775,7 +775,7 @@ async Confirmation(req,res)
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
     <tr>
       <td style="padding-right: 0px;padding-left: 0px;" align="center">
-        <a href="https://www.el-detox.com/product/rose-and-chamomile-cleansing-milk" target="_blank">
+        <a href="https://www.el-detox.com/product/the-organic-pharmacy-rose-and-chamomile-cleansing-milk" target="_blank">
         <img align="center" border="0" src="https://img.bayengage.com/32bb2557a2c6/studio/3696/Prod1.jpg" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 105px;" width="105"/>
         </a>
       </td>
@@ -822,7 +822,7 @@ async Confirmation(req,res)
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
     <tr>
       <td style="padding-right: 0px;padding-left: 0px;" align="center">
-        <a href="https://www.el-detox.com/product/manuka-face-cream" target="_blank">
+        <a href="https://www.el-detox.com/product/the-organic-pharmacy-manuka-face-cream" target="_blank">
         <img align="center" border="0" src="https://img.bayengage.com/32bb2557a2c6/studio/3697/prod3.jpg" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 105px;" width="105"/>
         </a>
       </td>
@@ -869,7 +869,7 @@ async Confirmation(req,res)
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
     <tr>
       <td style="padding-right: 0px;padding-left: 0px;" align="center">
-        <a href="https://www.el-detox.com/product/double-rose-rejuvenating-face-cream" target="_blank">
+        <a href="https://www.el-detox.com/product/the-organic-pharmacy-double-rose-rejuvenating-face-cream" target="_blank">
         <img align="center" border="0" src="https://img.bayengage.com/32bb2557a2c6/studio/3698/prod4.jpg" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 105px;" width="105"/>
         </a>
       </td>
@@ -1961,8 +1961,8 @@ td.column_b {width: 70%;}
     <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 10px;" valign="top"><![endif]-->
     <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 10px">
       <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-        <a href="https://pinterest.com/" title="Pinterest" target="_blank">
-          <img src="https://cdn.tools.unlayer.com/social/icons/circle/pinterest.png" alt="Pinterest" title="Pinterest" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
+        <a href="https://www.snapchat.com/add/eldetox" title="Snapchat" target="_blank">
+          <img src="https://cdn.tools.unlayer.com/social/icons/circle/snapchat.png" alt="Snapchat" title="Snapchat" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
         </a>
       </td></tr>
     </tbody></table>

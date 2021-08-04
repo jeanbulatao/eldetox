@@ -21,16 +21,19 @@ async MailTo(req,res)
         subject:  req[0].Type,
         text: 'hello world',
         html:  req[0].Message,
-        attachments : [{
-            filename : "logo.png",
-            path : "https://img.bayengage.com/32bb2557a2c6/studio/6260/logo.png",
-            cid : "logo"
-        },
-        {
-            filename : "Theqa qr.png",
-            path : "https://img.bayengage.com/32bb2557a2c6/studio/6259/theqa-qr.png"
-        }
-        ]
+        // attachments : [{
+        //     filename : "logo.png",
+        //     path : "https://img.bayengage.com/32bb2557a2c6/studio/6260/logo.png",
+        // },
+        // {
+        //     filename : "Theqa qr.png",
+        //     path : "https://img.bayengage.com/32bb2557a2c6/studio/6259/theqa-qr.png"
+        // },
+        // {
+        //     filename : "trustmark-badge",
+        //     path : "https://theqa.qa/badge/61d7cecb-1dac-44c1-8f00-ceb7fb5eea8c.svg"
+        // }
+        // ]
     }
  
     transporter.sendMail(mailOptions,(error, info)=>{
