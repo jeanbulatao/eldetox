@@ -12,7 +12,7 @@ var options = { method: 'POST',
    { Accept: 'application/json',
      Authorization: 'Bearer '+token,
      'Content-Type': 'application/json' },
-  body: { InvoiceAmount: req.body.InvoiceAmount, CurrencyIso: req.body.CurrencyIso },
+  body: { InvoiceAmount: req.body.InvoiceAmount, CurrencyIso: 'QAR' },
   json: true };
 
 request(options, function (error, response, body) {

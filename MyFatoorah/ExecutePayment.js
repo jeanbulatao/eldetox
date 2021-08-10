@@ -11,15 +11,15 @@ async executePayment(req,res){
        Authorization: 'Bearer '+token,
        'Content-Type': 'application/json' },
       body: 
-       { PaymentMethodId: '2',
-         CustomerName: 'Ahmed',
+       { PaymentMethodId: req.body[0].PaymentMethodId,
+         CustomerName:  req.body[0].CustomerName,
          DisplayCurrencyIso: 'QAR',
          MobileCountryCode: '+974',
-         CustomerMobile: '12345678',
-         CustomerEmail: 'xx@yy.com',
-         InvoiceValue: 123,
-         CallBackUrl: 'https://google.com',
-         ErrorUrl: 'https://google.com',
+         CustomerMobile: req.body[0].CustomerMobile,
+         CustomerEmail: req.body[0].CustomerEmail,
+         InvoiceValue: req.body[0].InvoiceValue,
+         CallBackUrl: 'http://127.0.0.1:4200/#/cart/MyFatoorah',
+         ErrorUrl: 'http://127.0.0.1:4200/#/cart/MyFatoorah',
          Language: 'en',
          CustomerReference: 'ref 1',
          CustomerCivilId: 12345678,
@@ -31,7 +31,18 @@ async executePayment(req,res){
             HouseBuildingNo: '',
             Address: '',
             AddressInstructions: '' },
-         InvoiceItems: [ { ItemName: 'string', Quantity: 1, UnitPrice: 123 } ] },
+            InvoiceItems : [{
+           
+                ItemName : "123",
+                Quantity : 1,
+                UnitPrice :  req.body[0].InvoiceValue,
+                Description : "string",
+                Weight : 1,
+                Width: 1,
+                Height : 1,
+                Depth : 1,
+              
+            }], },
       json: true };
       
       request(options, function (error, response, body) {

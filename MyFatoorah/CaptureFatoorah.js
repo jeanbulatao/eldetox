@@ -11,9 +11,9 @@ class capturepayment{
            Authorization: 'Bearer '+token,
            'Content-Type': 'application/json' },
           body: 
-           { KeyType: 'invoiceid',
-             Key: 'invoiceid',
-          json: true }};
+           { KeyType: req.body[0].KeyType,
+             Key: req.body[0].Key},
+          json: true };
           
           request(options, function (error, response, body) {
             if (error) 
