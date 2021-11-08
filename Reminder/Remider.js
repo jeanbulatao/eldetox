@@ -588,7 +588,9 @@ async remind(req,res)
        ]
       
        await Mailer.MailTo(dataToCustomer,res => {
-        res.send("sent");
+        res.status(200).send({
+          success: true
+        });
        });
      
 }

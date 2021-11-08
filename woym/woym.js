@@ -1142,7 +1142,7 @@ async woym(req,res) {
     var dataFromPoster = [{
         "Email" : req.body.email,
         "Message" : output,
-        "Type" : "We receive your message."}
+        "Type" : "Your voice is important to us."}
       ]
       var dataToCustomerCare = [{
        // "Email" : req.body.email,
@@ -1153,7 +1153,9 @@ async woym(req,res) {
       
  await Mailer.MailTo(dataFromPoster);
  await Mailer.MailTo(dataToCustomerCare);
-    res.send('Sent');
+    res.status(200).send({
+      success: true
+    });
 }
 }
 module.exports = new woym();

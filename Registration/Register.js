@@ -762,8 +762,10 @@ class EmailService {
       "Type" : 'Registration for your El Detox Account'}
       
     ]
-     await Mailer.MailTo(data);
-     res.send("sent");
+      await Mailer.MailTo(data);
+      res.status(200).send({
+        success: true
+      });
     }
 }
 module.exports = new EmailService();

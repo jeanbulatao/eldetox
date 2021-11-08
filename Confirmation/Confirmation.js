@@ -11,7 +11,7 @@ async Confirmation(req,res)
   var int = 1;
   Products.forEach(element => {
    str += `
-        <tr>
+    <tr>
           <th scope="row" style="text-align: center; padding-right: 20px ">`+ int +`</th>
           <td>`+element['product_id'] +`</td>
           <td>`+element['quantity'] +`</td>
@@ -1961,8 +1961,8 @@ td.column_b {width: 70%;}
     <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 10px;" valign="top"><![endif]-->
     <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 10px">
       <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-        <a href="https://www.snapchat.com/add/eldetox" title="Snapchat" target="_blank">
-          <img src="https://cdn.tools.unlayer.com/social/icons/circle/snapchat.png" alt="Snapchat" title="Snapchat" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
+        <a href="https://pinterest.com/" title="Pinterest" target="_blank">
+          <img src="https://cdn.tools.unlayer.com/social/icons/circle/pinterest.png" alt="Pinterest" title="Pinterest" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
         </a>
       </td></tr>
     </tbody></table>
@@ -2060,7 +2060,7 @@ td.column_b {width: 70%;}
         "Type" : "Confirmation"}
       ]
       var dataToCustomerCare = [{
-       "Email" : 'customercare@el-detox.com',
+       "Email" : 'no-reply@el-detox.com',
         "Message" : outputCustomerCare,
         "Type" : "Copy of Confirmation"}
       ]

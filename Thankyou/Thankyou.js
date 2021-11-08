@@ -711,7 +711,9 @@ class thankyou {
             "Type" : "Thank You"}
           ]
           await Mailer.MailTo(data);
-          res.send("sent");
+          res.status(200).send({
+            success: true
+          });
     }
 }
 
