@@ -8,12 +8,27 @@ async Confirmation(req,res)
 
   const Products = req.body.orderProductsToEmail;
   var str = '';
+  var bundle_items = '';
   var int = 1;
   Products.forEach(element => {
+
+    if(element["bundle_items"].length  > 0){
+      bundle_items = '';
+      bundle_items += ' ('
+      element['bundle_items'].forEach(element =>{
+        bundle_items += ' * ' + element + ' *, '
+      })
+
+      bundle_items += ')';
+    }
    str += `
     <tr>
           <th scope="row" style="text-align: center; padding-right: 20px ">`+ int +`</th>
-          <td>`+element['product_id'] +`</td>
+          <td>`+
+
+          element['product_id'] + bundle_items
+          
+          +`</td>
           <td>`+element['quantity'] +`</td>
           <td style="padding-right: 20px; font-size: 12px">QAR `+ element['price'] +`</td>
           <td style="font-size: 12px">QAR `+ (element['quantity'] * parseFloat(element['price']))+`</td>
