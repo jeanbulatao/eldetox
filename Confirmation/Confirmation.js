@@ -10,6 +10,7 @@ async Confirmation(req,res)
   var str = '';
   var bundle_items = '';
   var int = 1;
+  var aramex = '';
   Products.forEach(element => {
 
     if(element["bundle_items"].length  > 0){
@@ -36,6 +37,12 @@ async Confirmation(req,res)
         `
       int += 1 });
 
+      if(req.body.order.shipping_no != undefined)
+      {
+        aramex = ` <p style="font-size: 14px;padding-bottom: 10px; line-height: 140%;"><strong>** You can track your shipment details on aramex website **</strong></p>
+        <p style="font-size: 14px; line-height: 140%;"><strong>Shipping No :` + req.body.order.shipping_no + `</strong></p>
+          <p style="font-size: 14px; line-height: 140%;"><strong>Sipping Label : <a href="` + req.body.order.labelUrl +`">click here to view your shipping label</a></strong></p>`;
+      }
     const outputCustomer = `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
     <head>
@@ -359,7 +366,7 @@ async Confirmation(req,res)
           <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
             
       <div style="color: #000000; line-height: 140%; text-align: left; word-wrap: break-word;">
-        <p style="font-size: 14px; line-height: 140%;"><strong>Order Number :</strong></p>
+        <p style="font-size: 14px; line-height: 140%;"><strong>Order Number : `+ req.body.order.id +`</strong></p>
       </div>
     
           </td>
@@ -382,7 +389,7 @@ async Confirmation(req,res)
           <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
             
       <div style="color: #000000; line-height: 140%; text-align: left; word-wrap: break-word;">
-        <p style="font-size: 20px; line-height: 140%;"><strong>`+ req.body.order.id +`</strong></p>
+   `+ aramex +`
       </div>
     
           </td>
@@ -1501,6 +1508,8 @@ td.column_b {width: 70%;}
       
 <div style="color: #000000; line-height: 140%; text-align: left; word-wrap: break-word;">
   <p style="font-size: 20px; line-height: 140%;"><strong>`+ req.body.order.id + `</strong></p>
+
+ `+ aramex +`
 </div>
 
     </td>
@@ -2068,19 +2077,28 @@ td.column_b {width: 70%;}
    </html>   
    `;
 
-    var dataToCustomer = [{
+
+   var dataToCustomer = [{
      
-       "Email" : req.body.order.billing_email,
-        "Message" : outputCustomer,
-        "Type" : "Confirmation"}
-      ]
-      var dataToCustomerCare = [{
-       "Email" : 'no-reply@el-detox.com',
-        "Message" : outputCustomerCare,
-        "Type" : "Copy of Confirmation"}
-      ]
-      await Mailer.MailTo(dataToCustomer);
-      await Mailer.MailTo(dataToCustomerCare);
+    "Email" : req.body.order.billing_email,
+     "Message" : outputCustomer,
+     "Type" : "Confirmation"}
+   ]
+   var dataToCustomerCare = [{
+    "Email" : 'customercare@el-detox.com',
+     "Message" : outputCustomerCare,
+     "Type" : "Copy of Confirmation"}
+   ]
+   
+         var dataToCustomerCare1 = [{
+    "Email" : 'eldetox.qtr@gmail.com',
+     "Message" : outputCustomerCare,
+     "Type" : "Copy of Confirmation"}
+   ]
+  await Mailer.MailTo(dataToCustomer);
+  await Mailer.MailTo(dataToCustomerCare);
+  await Mailer.MailTo(dataToCustomerCare1);
+  
       res.send("sent");
 
 

@@ -18,6 +18,7 @@
     "mysql": "^2.18.1",
     "node-cron": "^3.0.0",
     "nodemailer": "^6.5.0",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "soap": "^0.43.0"
   }
 }

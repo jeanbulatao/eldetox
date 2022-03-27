@@ -5,16 +5,11 @@ async MailTo(req,res)
 {
 
     let transporter = nodemailer.createTransport({
-        host:'72.29.80.175',
-         port: 465,
-         secure: true,
-         auth : {
-             user:'no-reply@el-detox.com',
-             pass: '4p0AY6cUBFVn'
-         },
-         tls :{
-             rejectUnauthorized: false,
-         }
+        service: 'gmail',
+        auth : {
+            user: 'no-reply@el-detox.com',
+            pass: '4p0AY6cUBFVn'
+        },
     })
  
     let mailOptions = {
